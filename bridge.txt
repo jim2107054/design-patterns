@@ -1,0 +1,11 @@
+Abstraction identify koro.
+
+Implementor interface banao.
+
+Concrete implementors (details) banao.
+
+Abstraction class banao (implementor ke use kore).
+
+Refined abstractions create koro.
+
+Client code e use koro.
