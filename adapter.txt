@@ -1,0 +1,22 @@
+instead of changing the old class, we create a new class called adapter.
+-> interface ta banay felbo jeta client code expect korteche.
+#Interface 
+class PaymentService:
+   def pay(self,amount): #pay method i to user caitecilo
+   pass
+
+#Adapter 
+class BankServiceAdapter(PaymentService): #PaymentService k nicche
+    def __init__(self, bank_service:BankService):
+        self.bank_service = bank_service
+
+    def pay(self, amount):
+        self.bank_service.make_payment(amount)
+    
+#client code: expect a 'pay(amount)' method
+def process_payment(payment_service, amount):
+    payment_service.pay(amount)
+
+#attempt to use the BankServiceAdapter
+bank_service_adapter = BankServiceAdapter(BankService)
+process_payment(bank_service_adapter,100)
